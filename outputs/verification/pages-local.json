@@ -1,0 +1,37 @@
+[
+  {
+    "action": "open first case",
+    "backLink": "/cv-vlada/",
+    "heading": "Designing the Evolution of a Consumer App: From Social Audio to Wellness",
+    "image": "/cv-vlada/assets/28f39.svg",
+    "path": "/cv-vlada/case-study-1",
+    "route": "/case-study-1"
+  },
+  {
+    "action": "reload first case",
+    "path": "/cv-vlada/case-study-1",
+    "route": "/case-study-1"
+  },
+  {
+    "action": "open and reload second case",
+    "heading": "Zuzuzoo: Designing a playful learning experience for little explorers",
+    "lettering": [
+      "/cv-vlada/lettering/flag-gb.png",
+      "/cv-vlada/lettering/english.svg",
+      "/cv-vlada/lettering/flag-pl.png",
+      "/cv-vlada/lettering/polski.svg"
+    ],
+    "path": "/cv-vlada/case-study-2",
+    "route": "/case-study-2",
+    "videoSources": [
+      "/cv-vlada/media/zuzu-game.mp4",
+      "/cv-vlada/media/zuzu-english.mp4",
+      "/cv-vlada/media/zuzu-polish.mp4",
+      "/cv-vlada/media/zuzu-world.mp4",
+      "/cv-vlada/media/zuzu-game.mp4",
+      "/cv-vlada/media/zuzu-encyclopedia.mp4",
+      "/cv-vlada/media/zuzu-parents.mp4",
+      "/cv-vlada/media/zuzu-subscription.mp4"
+    ]
+  }
+]

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type AnchorHTMLAttributes, type HTMLAttributes, type ImgHTMLAttributes } from 'react';
 import mediaManifest from './media.json';
+import { publicPath, routePath } from './paths';
 
 const links: Record<string, string> = {
   Resume: 'https://drive.google.com/file/d/1v64vH2Rv_YpIRNF-zPYYzDV_bM-IPiCW/view?usp=sharing',
@@ -15,19 +16,19 @@ export function ButtonLink({ className = '', link = 'Link' }: { className?: stri
 }
 
 export function ButtonBack({ className = '', border = false }: { className?: string; border?: boolean }) {
-  return <a href="/" className={`${className} back-link ${border ? 'back-link--outlined' : ''}`} data-return-home>
-    {!border && <img src="/assets/28f39.svg" alt="" width="20" height="20" />}
+  return <a href={routePath('/')} className={`${className} back-link ${border ? 'back-link--outlined' : ''}`} data-return-home>
+    {!border && <img src={publicPath('assets/28f39.svg')} alt="" width="20" height="20" />}
     <span>Main page</span>
   </a>;
 }
 
-export function CaseLink({ children, className, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
-  return <a className={`${className || ''} project-card case-link`} {...props}>{children}</a>;
+export function CaseLink({ children, className, href = '/', ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) {
+  return <a className={`${className || ''} project-card case-link`} href={routePath(href)} {...props}>{children}</a>;
 }
 
 export function ProgressCase({ children, className = '', ...props }: HTMLAttributes<HTMLElement>) {
   return <article className={`${className} project-card progress-card`} tabIndex={0} {...props}>
-    <span className="project-status"><img src="/lettering/in-progress.svg" alt="Case Study in Progress …" width="380" height="28" /></span>
+    <span className="project-status"><img src={publicPath('lettering/in-progress.svg')} alt="Case Study in Progress …" width="380" height="28" /></span>
     {children}
   </article>;
 }
@@ -58,10 +59,10 @@ export function Media({ slot, className = '', ...props }: HTMLAttributes<HTMLDiv
   }, [hasVideo, isLanguage, qaStill]);
   return <div ref={root} className={`${className} media-slot`} data-media-slot={slot} {...props}>
     {hasVideo ? <>
-      <video ref={video} src={source.video} poster={source.poster} muted={!isLanguage} loop={!isLanguage} playsInline controls={isLanguage} preload="none" aria-label={slot.replaceAll('-', ' ')} onPlay={() => {
+      <video ref={video} src={source.video ? publicPath(source.video) : undefined} poster={source.poster ? publicPath(source.poster) : undefined} muted={!isLanguage} loop={!isLanguage} playsInline controls={isLanguage} preload="none" aria-label={slot.replaceAll('-', ' ')} onPlay={() => {
         if(isLanguage)document.querySelectorAll('video').forEach(v=>{if(v!==video.current&&!v.muted)v.pause();});
       }} />
-    </> : source.poster ? <img src={source.poster} alt={slot.replaceAll('-', ' ') + ' — demonstration still'} loading={import.meta.env.DEV && new URLSearchParams(location.search).has('qa') ? 'eager' : 'lazy'} decoding="async" /> : <span className="media-unavailable" role="img" aria-label={`${slot.replaceAll('-', ' ')} video — source file required`}>Video</span>}
+    </> : source.poster ? <img src={publicPath(source.poster)} alt={slot.replaceAll('-', ' ') + ' — demonstration still'} loading={import.meta.env.DEV && new URLSearchParams(location.search).has('qa') ? 'eager' : 'lazy'} decoding="async" /> : <span className="media-unavailable" role="img" aria-label={`${slot.replaceAll('-', ' ')} video — source file required`}>Video</span>}
   </div>;
 }
 
@@ -70,6 +71,6 @@ export function MotionImage({ slot, className = '', src, ...props }: ImgHTMLAttr
   useEffect(()=>{const query=matchMedia('(prefers-reduced-motion: reduce)');const change=()=>setReduced(query.matches);query.addEventListener('change',change);return()=>query.removeEventListener('change',change);},[]);
   const still=reduced||(import.meta.env.DEV&&new URLSearchParams(location.search).has('qa'));
   return <div className={`${className} motion-image`} data-motion-image={slot}>
-    <img {...props} loading={props.loading??'lazy'} decoding="async" src={`/media/${slot}.${still?'png':'gif'}`} />
+    <img {...props} loading={props.loading??'lazy'} decoding="async" src={publicPath(`media/${slot}.${still?'png':'gif'}`)} />
   </div>;
 }

@@ -11,7 +11,8 @@
     "predev": "node scripts/prepare-media.mjs",
     "prebuild": "node scripts/prepare-media.mjs && node scripts/check-assets.mjs",
     "check:assets": "node scripts/check-assets.mjs",
-    "media": "node scripts/prepare-media.mjs"
+    "media": "node scripts/prepare-media.mjs",
+    "postbuild": "node scripts/prepare-pages.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

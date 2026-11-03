@@ -57,9 +57,9 @@ const media={
 const inlineImages={};
 for(const file of fs.readdirSync('design/source').filter(f=>f.endsWith('.tsx'))){
  let text=fs.readFileSync('design/source/'+file,'utf8');
- const prefix=text.slice(0,text.indexOf('\ntype ')).replace(/const assetPathPrefix = "[^"]+";/,'const assetPathPrefix = "/assets";');
+ const prefix=text.slice(0,text.indexOf('\ntype ')).replace(/const assetPathPrefix = "[^"]+";/,'const assetPathPrefix = publicPath("assets");');
  const body=text.slice(text.indexOf('export default function'));
- text='import { ButtonLink, ButtonBack, CaseLink, ProgressCase, Media, MotionImage } from "../components";\n'+prefix+'\n'+body;
+ text='import { ButtonLink, ButtonBack, CaseLink, ProgressCase, Media, MotionImage } from "../components";\nimport { publicPath } from "../paths";\n'+prefix+'\n'+body;
  const source=ts.createSourceFile(file,text,ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
  const replacements=[];
  let firstHeading=true;let lastHeading='Product design';
@@ -121,7 +121,7 @@ for(const file of fs.readdirSync('design/source').filter(f=>f.endsWith('.tsx')))
  visit(source);
  for(const [start,end,value] of replacements.sort((a,b)=>b[0]-a[0]))text=text.slice(0,start)+value+text.slice(end);
  // Preserve the supplied wording exactly for the first fidelity pass.
- text=text.replace(/ aria-hidden\b/g,'').replace(/className="([^"]*)"/g,(_,v)=>`className="${classes(v)}"`);
+ text=text.replace(/ aria-hidden\b/g,'').replace(/src="(\/lettering\/[^\"]+)"/g,(_,v)=>`src={publicPath(${JSON.stringify(v)})}`).replace(/className="([^"]*)"/g,(_,v)=>`className="${classes(v)}"`);
  text=text.replace(/(<img\b[^>]*?)(\s*\/>)/g,(_,a,b)=>a+' loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async"'+b);
  fs.writeFileSync('src/pages/'+file,text);
 }

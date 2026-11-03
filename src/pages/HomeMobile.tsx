@@ -1,5 +1,6 @@
 import { ButtonLink, ButtonBack, CaseLink, ProgressCase, Media, MotionImage } from "../components";
-const assetPathPrefix = "/assets";
+import { publicPath } from "../paths";
+const assetPathPrefix = publicPath("assets");
 const imgEllipse1 = `${assetPathPrefix}/e3e92.png`;
 const imgFrameCover = `${assetPathPrefix}/fb63c.png`;
 const imgFrameCover1 = `${assetPathPrefix}/f9f76.png`;

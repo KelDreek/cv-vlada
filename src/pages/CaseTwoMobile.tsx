@@ -1,5 +1,6 @@
 import { ButtonLink, ButtonBack, CaseLink, ProgressCase, Media, MotionImage } from "../components";
-const assetPathPrefix = "/assets";
+import { publicPath } from "../paths";
+const assetPathPrefix = publicPath("assets");
 const imgFrame = `${assetPathPrefix}/28f39.svg`;
 const imgFrameImage = `${assetPathPrefix}/69dc1.png`;
 const imgFrameImage1 = `${assetPathPrefix}/47404.png`;
@@ -115,15 +116,15 @@ export default function Mobile() {
           <div className="d1 d2 d59 d98 d16 d8 d12 d13" data-node-id="1:723">
             <div className="d44 d1 d2 d37 d3 d77 d78 d4 d61 d38 d52 d79 d8 d64" data-node-id="1:724">
               <div className="d19 d1 d2 d3 d80 d16 d27 d28 d8 d12 d81 d66 d82 d13" data-node-id="1:725">
-                <div className="d2 d3 d83 d8 d12 d84 d13 d85" data-node-id="1:726"><img className="d86" src="/lettering/flag-gb.png" width="24" height="34" alt="" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
-                <div className="d2 d3 d83 d8 d12 d87 d13" data-node-id="1:727"><img className="d86" src="/lettering/english.svg" width="109.142578125" height="25" alt="ENGLISH" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
+                <div className="d2 d3 d83 d8 d12 d84 d13 d85" data-node-id="1:726"><img className="d86" src={publicPath("/lettering/flag-gb.png")} width="24" height="34" alt="" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
+                <div className="d2 d3 d83 d8 d12 d87 d13" data-node-id="1:727"><img className="d86" src={publicPath("/lettering/english.svg")} width="109.142578125" height="25" alt="ENGLISH" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
               </div>
               <Media slot="zuzu-english" className="d88 d37 d89 d8" data-node-id="1:728" />
             </div>
             <div className="d44 d1 d2 d37 d3 d77 d78 d4 d61 d38 d52 d79 d8 d64" data-node-id="1:729">
               <div className="d19 d1 d2 d3 d80 d16 d27 d28 d8 d12 d81 d66 d82 d13" data-node-id="1:730">
-                <div className="d2 d3 d83 d8 d12 d84 d13 d85" data-node-id="1:731"><img className="d86" src="/lettering/flag-pl.png" width="24" height="34" alt="" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
-                <div className="d2 d3 d83 d8 d12 d87 d13" data-node-id="1:732"><img className="d86" src="/lettering/polski.svg" width="90.28125" height="25" alt="POLSKI" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
+                <div className="d2 d3 d83 d8 d12 d84 d13 d85" data-node-id="1:731"><img className="d86" src={publicPath("/lettering/flag-pl.png")} width="24" height="34" alt="" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
+                <div className="d2 d3 d83 d8 d12 d87 d13" data-node-id="1:732"><img className="d86" src={publicPath("/lettering/polski.svg")} width="90.28125" height="25" alt="POLSKI" loading={import.meta.env.DEV && new URLSearchParams(location.search).has("qa") ? "eager" : "lazy"} decoding="async" /></div>
               </div>
               <Media slot="zuzu-polish" className="d88 d37 d89 d8" data-node-id="1:733" />
             </div>

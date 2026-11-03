@@ -9,6 +9,7 @@ import CaseTwoDesktop from './pages/CaseTwoDesktop';
 import CaseTwoMobile from './pages/CaseTwoMobile';
 import './styles.css';
 import './design.css';
+import { readRoute, routePath } from './paths';
 
 type Position = { y: number; focus?: string };
 const pages: Record<string, {title:string;desktop:typeof HomeDesktop;mobile:typeof HomeMobile}> = {
@@ -18,7 +19,7 @@ const pages: Record<string, {title:string;desktop:typeof HomeDesktop;mobile:type
 };
 function readPositions():Record<string,Position> { try{return JSON.parse(sessionStorage.getItem('portfolio-positions')||'{}');}catch{return {};}}
 function App(){
- const [path,setPath]=useState(location.pathname.replace(/\/$/,'')||'/');
+ const [path,setPath]=useState(readRoute);
  const [mobile,setMobile]=useState(matchMedia('(max-width: 719px)').matches);
  const page=pages[path];
  useEffect(()=>{
@@ -27,7 +28,7 @@ function App(){
  },[]);
  useLayoutEffect(()=>{document.title=page?.title||'Page not found — Vladislav Fidrik';},[page]);
  useEffect(()=>{
-  history.scrollRestoration='manual';let navigating=false;let currentPath=location.pathname;
+  history.scrollRestoration='manual';let navigating=false;let currentPath=readRoute();
   let pending: {destination:string;back:boolean;pop:boolean}|undefined;
   const navigate=async(destination:string,back:boolean,pop=false)=>{
    if(navigating){pending={destination,back,pop};return;}navigating=true;
@@ -35,7 +36,7 @@ function App(){
    const positions=readPositions();positions[currentPath]={y:scrollY,focus:active?.closest('[data-node-id]')?.getAttribute('data-node-id')||undefined};
    sessionStorage.setItem('portfolio-positions',JSON.stringify(positions));
    const apply=()=>{
-    if(!pop)history.pushState({},'',destination);
+    if(!pop)history.pushState({},'',routePath(destination));
     flushSync(()=>setPath(destination));currentPath=destination;
     const target=back?positions[destination]:undefined;
     window.scrollTo({top:target?.y||0,left:0,behavior:'instant'});
@@ -44,7 +45,7 @@ function App(){
    };
    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
    if(document.startViewTransition&&!reduced){
-    try{await document.startViewTransition(apply).finished;}catch{if(location.pathname!==destination)apply();}
+    try{await document.startViewTransition(apply).finished;}catch{if(readRoute()!==destination)apply();}
    }else if(reduced){apply();}
    else{const main=document.querySelector('main')!;await main.animate([{opacity:1},{opacity:0}],{duration:130,fill:'forwards'}).finished;apply();main.getAnimations().forEach(a=>a.cancel());await main.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:250,easing:'cubic-bezier(.22,1,.36,1)'}).finished;}
    navigating=false;
@@ -53,14 +54,14 @@ function App(){
   const click=(e:MouseEvent)=>{
    const a=(e.target as Element).closest<HTMLAnchorElement>('a[href]');
    if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;
-   const url=new URL(a.href);if(url.origin!==location.origin||url.hash||!pages[url.pathname]||url.pathname===location.pathname)return;
-   e.preventDefault();void navigate(url.pathname,a.hasAttribute('data-return-home'));
+   const url=new URL(a.href),destination=readRoute(url.pathname);if(url.origin!==location.origin||url.hash||!pages[destination]||destination===readRoute())return;
+   e.preventDefault();void navigate(destination,a.hasAttribute('data-return-home'));
   };
-  const pop=()=>{void navigate(location.pathname,true,true);};
+  const pop=()=>{void navigate(readRoute(),true,true);};
   document.addEventListener('click',click);window.addEventListener('popstate',pop);
   return()=>{document.removeEventListener('click',click);window.removeEventListener('popstate',pop);};
  },[]);
- if(!page)return <main className="not-found"><h1>Page not found</h1><a href="/">Back to the main page</a></main>;
+ if(!page)return <main className="not-found"><h1>Page not found</h1><a href={routePath('/')}>Back to the main page</a></main>;
  const Screen=mobile?page.mobile:page.desktop;
  return <><a href="#main" className="skip-link">Skip to content</a><main id="main" data-route={path}><Screen /></main></>;
 }
