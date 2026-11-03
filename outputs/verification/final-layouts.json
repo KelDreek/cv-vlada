@@ -1,0 +1,44 @@
+[
+  {
+    "name": "home-desktop",
+    "width": 1280,
+    "height": 3384,
+    "overflow": 1280,
+    "images": []
+  },
+  {
+    "name": "home-mobile",
+    "width": 399,
+    "height": 3117.5,
+    "overflow": 399,
+    "images": []
+  },
+  {
+    "name": "case1-desktop",
+    "width": 1280,
+    "height": 20050,
+    "overflow": 1280,
+    "images": []
+  },
+  {
+    "name": "case1-mobile",
+    "width": 375,
+    "height": 18403.25,
+    "overflow": 375,
+    "images": []
+  },
+  {
+    "name": "case2-desktop",
+    "width": 1280,
+    "height": 10022,
+    "overflow": 1280,
+    "images": []
+  },
+  {
+    "name": "case2-mobile",
+    "width": 375,
+    "height": 9264.25,
+    "overflow": 375,
+    "images": []
+  }
+]

@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T11:58:22.164347+00:00",
+  "title": "Design System: Vladislav Fidrik Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "text-primary": {
+        "role": "primary",
+        "displayName": "Dark brown",
+        "tonalRamp": [
+          "oklch(15% 0.038 90)",
+          "oklch(26% 0.038 90)",
+          "oklch(38% 0.038 90)",
+          "oklch(49% 0.038 90)",
+          "oklch(61% 0.038 90)",
+          "oklch(72% 0.038 90)",
+          "oklch(84% 0.038 90)",
+          "oklch(95% 0.038 90)"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Muted taupe",
+        "tonalRamp": [
+          "oklch(15% 0.018 90)",
+          "oklch(26% 0.018 90)",
+          "oklch(38% 0.018 90)",
+          "oklch(49% 0.018 90)",
+          "oklch(61% 0.018 90)",
+          "oklch(72% 0.018 90)",
+          "oklch(84% 0.018 90)",
+          "oklch(95% 0.018 90)"
+        ]
+      },
+      "background-primary": {
+        "role": "neutral",
+        "displayName": "Warm paper",
+        "tonalRamp": [
+          "oklch(15% 0.003 90)",
+          "oklch(26% 0.003 90)",
+          "oklch(38% 0.003 90)",
+          "oklch(49% 0.003 90)",
+          "oklch(61% 0.003 90)",
+          "oklch(72% 0.003 90)",
+          "oklch(84% 0.003 90)",
+          "oklch(95% 0.003 90)"
+        ]
+      },
+      "background-secondary": {
+        "role": "neutral",
+        "displayName": "Soft stone",
+        "tonalRamp": [
+          "oklch(15% 0.004 90)",
+          "oklch(26% 0.004 90)",
+          "oklch(38% 0.004 90)",
+          "oklch(49% 0.004 90)",
+          "oklch(61% 0.004 90)",
+          "oklch(72% 0.004 90)",
+          "oklch(84% 0.004 90)",
+          "oklch(95% 0.004 90)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Case title",
+        "purpose": "Case-study titles; bold italic."
+      },
+      "headline": {
+        "displayName": "Introduction and project title",
+        "purpose": "Home introduction and project titles; bold italic."
+      },
+      "body": {
+        "displayName": "Reading copy",
+        "purpose": "Prose, text links and metadata; light normal."
+      },
+      "label": {
+        "displayName": "Small copy",
+        "purpose": "Captions and small copy; light normal. Home footer uses its source-specific 22px line-height."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "link-feedback",
+        "value": "color 160ms",
+        "purpose": "Text-link and linked-card hover feedback."
+      },
+      {
+        "name": "page-out",
+        "value": "140ms ease-out",
+        "purpose": "Outgoing View Transition fade."
+      },
+      {
+        "name": "page-in",
+        "value": "260ms cubic-bezier(.22,1,.36,1) 120ms",
+        "purpose": "Incoming View Transition fade with 8px upward entry."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration:.01ms;transition-duration:.01ms;scroll-behavior:auto",
+        "purpose": "Preference override; navigation also skips its animation branch."
+      },
+      {
+        "name": "media-control-reveal",
+        "value": "opacity 150ms",
+        "purpose": "Reveal pause/play controls on hover or focus; source GIFs use still PNGs for pause and reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop-start",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Text link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Underlined external or contact anchor.",
+      "html": "<a class=\"ds-link\" href=\"mailto:fidrikx@gmail.com\">fidrikx@gmail.com</a>",
+      "css": ".ds-link{font-family:'Averia Serif Libre',serif;font-weight:300;font-size:20px;line-height:1.4;letter-spacing:-.4px;color:var(--text-primary,#332e1c);text-decoration:underline;text-underline-position:from-font;white-space:nowrap;transition:color 160ms}.ds-link:hover{color:var(--text-secondary,#838074)}.ds-link:focus-visible{outline:2px solid #6c6141;outline-offset:6px;border-radius:3px;}"
+    },
+    {
+      "name": "Return link",
+      "kind": "nav",
+      "description": "Arrow and underlined Main page anchor.",
+      "html": "<a class=\"ds-back\" href=\"/\"><svg preserveAspectRatio=\"none\" overflow=\"visible\" style=\"display: block;\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g id=\"Frame\">\n<path id=\"Vector\" d=\"M6.25 10.625L2.5 6.875L6.25 3.125\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke=\"#332E1C\"/>\n<path id=\"Vector_2\" d=\"M6.25 15.625H13.125C14.2853 15.625 15.3981 15.1641 16.2186 14.3436C17.0391 13.5231 17.5 12.4103 17.5 11.25C17.5 10.0897 17.0391 8.97688 16.2186 8.15641C15.3981 7.33594 14.2853 6.875 13.125 6.875H2.5\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke=\"#332E1C\"/>\n</g>\n</svg><span>Main page</span></a>",
+      "css": ".ds-back{font-family:'Averia Serif Libre',serif;font-weight:300;font-size:20px;line-height:1.4;letter-spacing:-.4px;color:var(--text-primary,#332e1c);display:inline-flex;align-items:center;gap:16px;text-decoration:none;transition:color 160ms}.ds-back span{text-decoration:underline;text-underline-position:from-font}.ds-back:hover{color:var(--text-secondary,#838074)}.ds-back:focus-visible{outline:2px solid #6c6141;outline-offset:6px;border-radius:3px;}"
+    },
+    {
+      "name": "Outlined return link",
+      "kind": "button",
+      "refersTo": "return-link-outlined",
+      "description": "Thin outlined Main page anchor.",
+      "html": "<a class=\"ds-return\" href=\"/\">Main page</a>",
+      "css": ".ds-return{font-family:'Averia Serif Libre',serif;font-weight:300;font-size:20px;line-height:1.4;letter-spacing:-.4px;color:var(--text-primary,#332e1c);display:inline-flex;align-items:center;justify-content:center;padding:8px 16px;border:1px solid var(--border-primary,#332e1c);border-radius:24px;text-decoration:none;transition:color 160ms}.ds-return:hover{color:var(--text-secondary,#838074)}.ds-return:focus-visible{outline:2px solid #6c6141;outline-offset:6px}"
+    },
+    {
+      "name": "Project card",
+      "kind": "card",
+      "description": "Source card structure; image area shown as its base surface in this isolated preview.",
+      "html": "<a class=\"ds-case\" href=\"/case-study-2\"><div class=\"ds-cover\" aria-hidden=\"true\"></div><h2>Zuzuzoo: Designing a playful learning experience for little explorers</h2><div class=\"ds-meta\"><span>iOS, iPadOS, Android</span><span>6 months</span></div></a>",
+      "css": ".ds-case{font-family:'Averia Serif Libre',serif;font-weight:300;font-size:20px;line-height:1.4;letter-spacing:-.4px;color:var(--text-primary,#332e1c);display:flex;flex-direction:column;gap:16px;max-width:640px;text-decoration:none}.ds-cover{width:100%;aspect-ratio:640/400;border-radius:var(--corner,16px);background:var(--background-secondary,#f1f1ef)}.ds-case h2{margin:0;font-size:32px;line-height:1;font-weight:700;font-style:italic;letter-spacing:-2px;transition:color 160ms}.ds-meta{display:flex;flex-wrap:wrap;gap:16px}.ds-case:hover h2,.ds-case:hover .ds-meta{color:var(--text-secondary,#838074)}.ds-case:focus-visible{outline:2px solid #6c6141;outline-offset:8px;border-radius:16px}"
+    },
+    {
+      "name": "Media frame",
+      "kind": "custom",
+      "refersTo": "media-frame",
+      "description": "Clipped source-media surface; asset-specific aspect ratios vary.",
+      "html": "<figure class=\"ds-media\" aria-label=\"Media frame surface\"></figure>",
+      "css": ".ds-media{margin:0;width:100%;max-width:1024px;aspect-ratio:1024/640;overflow:hidden;background:var(--background-secondary,#f1f1ef);border-radius:var(--corner,16px)}"
+    },
+    {
+      "name": "Contact navigation",
+      "kind": "nav",
+      "description": "Résumé, professional profile and email anchors.",
+      "html": "<nav class=\"ds-contact\" aria-label=\"Contact\"><a href=\"https://drive.google.com/file/d/1v64vH2Rv_YpIRNF-zPYYzDV_bM-IPiCW/view?usp=sharing\">Resume</a><a href=\"https://www.linkedin.com/in/fidrik/\">Linkedin</a><a href=\"mailto:fidrikx@gmail.com\">fidrikx@gmail.com</a></nav>",
+      "css": ".ds-contact{display:flex;align-items:center;gap:16px}.ds-contact a{font-family:'Averia Serif Libre',serif;font-weight:300;font-size:20px;line-height:1.4;letter-spacing:-.4px;color:var(--text-primary,#332e1c);text-decoration:underline;text-underline-position:from-font;white-space:nowrap;transition:color 160ms}.ds-contact a:hover{color:var(--text-secondary,#838074)}.ds-contact a:focus-visible{outline:2px solid #6c6141;outline-offset:6px;border-radius:3px;}"
+    },
+    {
+      "name": "Motion control",
+      "kind": "button",
+      "description": "Pause/play control for original video and GIF motion. This isolated preview shows the visible state; runtime behavior belongs to the application.",
+      "html": "<button class=\"ds-motion\" type=\"button\" aria-label=\"Pause animation\">Pause</button>",
+      "css": ".ds-motion{font-family:'Averia Serif Libre',serif;font-weight:300;padding:4px 10px;border:1px solid #332e1c33;border-radius:16px;background:var(--background-primary,#fafaf9);color:var(--text-primary,#332e1c);font-size:14px;line-height:20px;cursor:pointer;transition:opacity 150ms}.ds-motion:hover{opacity:1}.ds-motion:focus-visible{outline:2px solid #6c6141;outline-offset:6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The existing Figma portfolio",
+    "overview": "A quiet editorial presentation built around warm paper-like surfaces, expressive serif headings, generous vertical space, and large project imagery. The supplied Figma file is the visual authority. This document records the built system without introducing a new identity.",
+    "keyCharacteristics": [
+      "Warm neutral surfaces and dark brown text.",
+      "Light serif prose paired with bold italic serif headings.",
+      "Narrow reading columns and wider case-study media.",
+      "Flat, gently rounded image frames."
+    ],
+    "rules": [
+      {
+        "name": "The Source Palette Rule",
+        "body": "Keep the supplied neutral palette when reproducing these screens. Muted taupe is an inherited contrast limitation, not a recommended accessible normal-text color for new interfaces: it measures approximately 3.79:1 on the page and 3.50:1 on the secondary surface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Face Rule",
+        "body": "Preserve the light normal/bold italic pairing and its tight heading tracking; introducing a different heading family changes the source identity.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do use the supplied Figma composition and local original imagery as the visual authority.",
+      "Do preserve the centered prose/media width relationship and generous section rhythm.",
+      "Do keep the local light normal and bold italic Averia font pairing.",
+      "Do preserve the original media, source lettering outlines, and explicit verification limits."
+    ],
+    "donts": [
+      "Don't add decorative effects or a new visual identity to this faithful reproduction.",
+      "Don't present static poster images as verified animation or video.",
+      "Don't alter source composition merely to force a target page height.",
+      "Don't describe the inherited secondary-text contrast as an accessibility standard."
+    ]
+  }
+}

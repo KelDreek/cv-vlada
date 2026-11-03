@@ -1,0 +1,200 @@
+[
+  {
+    "slot": "audio-creation",
+    "nodeId": "1:253",
+    "videoHash": "d5fb5781c5349ac72542caf01d8ad7e4ed55d30a",
+    "visible": true,
+    "posterAvailable": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "6f107bd43b07a1333b61045a82bbfb4af430dba6"
+  },
+  {
+    "slot": "shared-interests",
+    "nodeId": "1:258",
+    "videoHash": "fe1be1e5677fc7e071794d595ae430d794f40907",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "708b250e5538f0ed9f41f0e59830f48f139d3bed"
+  },
+  {
+    "slot": "daily-activity",
+    "nodeId": "1:270",
+    "videoHash": "03912afd01c59a8d8a87633d6cdc42f667aa540f",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "c7a41b52e00b9ad13aaed261869b071c718e160c"
+  },
+  {
+    "slot": "zuzu-game",
+    "nodeId": "1:607",
+    "alsoUsedAt": "1:654",
+    "videoHash": "526af99b977553c34a08c8b5b6983e00bdcd0a53",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "59edd2a2e6b1c5858954e9853c5332c23bd5d693"
+  },
+  {
+    "slot": "zuzu-intro",
+    "nodeId": "1:616",
+    "videoHash": "a3faa285f3d60021ff3a46873a93dfe0e85ad3d9",
+    "visible": false,
+    "note": "Node absent from exported visible layouts; original visibility was not independently inspected.",
+    "playback": {
+      "autoplay": false,
+      "mediaLoop": false,
+      "muted": false,
+      "showControls": true,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "62cb8f035167a224a78ee7643cf18404ae0c709a"
+  },
+  {
+    "slot": "zuzu-feedback",
+    "nodeId": "1:627",
+    "videoHash": "d5795a3277a25db9145178d2f21a3dcc8455b403",
+    "visible": false,
+    "note": "Node absent from exported visible layouts; original visibility was not independently inspected.",
+    "playback": {
+      "autoplay": false,
+      "mediaLoop": false,
+      "muted": false,
+      "showControls": true,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "edf66a38a61b9d519aadc9f104796f3f1c244daf"
+  },
+  {
+    "slot": "zuzu-english",
+    "nodeId": "1:633",
+    "videoHash": "a583232237ef341ad504696fd6aa86c96e74d4f9",
+    "visible": true,
+    "sound": true,
+    "playback": {
+      "autoplay": false,
+      "mediaLoop": false,
+      "muted": false,
+      "showControls": true,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "4534452be110ed1db65109af82d68f1af07aebd2"
+  },
+  {
+    "slot": "zuzu-polish",
+    "nodeId": "1:638",
+    "videoHash": "7c63af789b39a963ee533995ad90d4e9cce18f45",
+    "visible": true,
+    "sound": true,
+    "playback": {
+      "autoplay": false,
+      "mediaLoop": false,
+      "muted": false,
+      "showControls": true,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "4534452be110ed1db65109af82d68f1af07aebd2"
+  },
+  {
+    "slot": "zuzu-world",
+    "nodeId": "1:648",
+    "videoHash": "b5a64ee1f1aa0fd5a4bd5f5c799df3d002383a20",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "2117019dc9b24b0895c066d72c515624afc777cd"
+  },
+  {
+    "slot": "zuzu-encyclopedia",
+    "nodeId": "1:655",
+    "videoHash": "64379eacc97d0fa51cb8797567b321361a7cc352",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "b2573fc28e0425f0ad8de6a83fe7697b7fe88b9a"
+  },
+  {
+    "slot": "zuzu-parents",
+    "nodeId": "1:656",
+    "videoHash": "e7b7cec26679af8afe8f96ba449533ebed5d4aea",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "975fb1fd99103b62de5f6573f5c24f339f3f6b76"
+  },
+  {
+    "slot": "zuzu-subscription",
+    "nodeId": "1:657",
+    "videoHash": "63309aa1ec841cbb4f373bc3834c160a96dcf97e",
+    "visible": true,
+    "playback": {
+      "autoplay": true,
+      "mediaLoop": true,
+      "muted": true,
+      "showControls": false,
+      "startTimeMs": 0,
+      "endTimeMs": 0,
+      "playbackRate": 1
+    },
+    "posterImageHash": "130d0073c01a693aa90fa46a5bc737c18b5d9d71"
+  }
+]

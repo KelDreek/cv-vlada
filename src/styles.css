@@ -1,0 +1,48 @@
+@font-face{font-family:'Averia Serif Libre';src:url('/fonts/averia-light.ttf') format('truetype');font-weight:300;font-style:normal;font-display:block}
+@font-face{font-family:'Averia Serif Libre';src:url('/fonts/averia-bold-italic.ttf') format('truetype');font-weight:700;font-style:italic;font-display:block}
+:root{font-family:'Averia Serif Libre',serif;font-weight:300;color:#332e1c;background:#fafaf9;font-synthesis:none;--text-primary:#332e1c;--text-secondary:#838074;--background-primary:#fafaf9;--background-secondary:#f1f1ef;--elements-primary:#332e1c;--border-primary:#332e1c;--gap-s:16px;--gap-l:32px;--gap-xl:48px;--gap-xxl:80px;--gap-2xl:128px;--corner:16px}
+*,*::before,*::after{box-sizing:border-box;border:0 solid currentColor}
+html{line-height:1.5;-webkit-text-size-adjust:100%;text-size-adjust:100%;scrollbar-gutter:stable;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{margin:0;min-width:320px}
+h1,h2,h3,h4,p,ul,ol,figure{margin:0;font-size:inherit;font-weight:inherit}
+ul,ol{padding:0;list-style:none}
+img,video,svg{display:block;vertical-align:middle}
+img,video{max-width:100%;height:auto}
+button,input{font:inherit;color:inherit}
+a{color:inherit;text-decoration:inherit}
+button{cursor:pointer}
+::selection{background:#e6dfc7;color:#332e1c}
+:focus-visible{outline:2px solid #6c6141;outline-offset:6px;border-radius:3px}
+h1:focus:not(:focus-visible){outline:none}
+.text-link{font-size:20px;line-height:1.4;letter-spacing:-.4px;text-decoration:underline;text-underline-position:from-font;text-decoration-thickness:from-font;white-space:nowrap;transition:color 160ms}
+.text-link:hover,.back-link:hover{color:#838074}
+.back-link{font-size:20px;line-height:1.4;letter-spacing:-.4px;transition:color 160ms}
+.back-link>span{text-decoration:underline;text-underline-position:from-font}
+.back-link>img{flex-shrink:0;width:20px;height:20px}
+.back-link--outlined>span{text-decoration:none}
+.case-link{color:#332e1c;text-decoration:none;cursor:pointer}
+.project-card>[data-name="frame-cover"]{overflow:hidden;transition:opacity 180ms ease-out}
+.case-link h1,.case-link h2,.case-link p{transition:color 160ms}
+.case-link:focus-visible :is(h1,h2,p),.case-link:active :is(h1,h2,p){color:var(--text-secondary)}
+.case-link:focus-visible>[data-name="frame-cover"],.case-link:active>[data-name="frame-cover"]{opacity:.8}
+.project-card:focus-visible{outline-offset:8px;border-radius:16px}
+.progress-card{cursor:default}
+.project-status{position:absolute;inset:0 0 auto;aspect-ratio:640/400;z-index:1;display:grid;place-items:center;border-radius:16px;background:#f1f1ef0d;-webkit-backdrop-filter:blur(7.5px);backdrop-filter:blur(7.5px);opacity:0;pointer-events:none;transition:opacity 180ms ease-out}
+.project-status>img{width:380px;max-width:calc(100% - 32px);height:auto}
+.progress-card:focus-visible>.project-status{opacity:1}
+@media(hover:hover){.case-link:hover :is(h1,h2,p){color:var(--text-secondary)}.case-link:hover>[data-name="frame-cover"]{opacity:.8}.progress-card:hover>.project-status{opacity:1}}
+@media(hover:none){.progress-card>.project-status{opacity:1;inset:12px 12px auto;aspect-ratio:auto;padding:10px 12px;background:#fafaf9ed;border-radius:12px}.project-status>img{width:280px;max-width:100%}}
+.media-slot{overflow:hidden;background:#f1f1ef}
+.media-slot>img,.media-slot>video{display:block;width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.media-unavailable{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:16px;letter-spacing:-.4px;color:#838074}
+.motion-image[data-motion-image]{overflow:hidden}
+.motion-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.skip-link{position:fixed;z-index:100;top:8px;left:16px;transform:translateY(-200%);background:#fafaf9;padding:8px 16px;border:1px solid #332e1c;border-radius:20px}
+.skip-link:focus{transform:none}
+.not-found{max-width:640px;margin:128px auto;padding:16px;font-size:24px}
+.not-found a{text-decoration:underline}
+::view-transition-old(root){animation:page-out 140ms ease-out both}
+::view-transition-new(root){animation:page-in 260ms cubic-bezier(.22,1,.36,1) 120ms both}
+@keyframes page-out{to{opacity:0}}
+@keyframes page-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

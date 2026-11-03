@@ -1,0 +1,15 @@
+{
+  "source": "design/portfolio.fig",
+  "version": 106,
+  "sourceNodes": 581,
+  "resolvedNodes": 622,
+  "imageAssets": 69,
+  "videoSources": 12,
+  "reusableComponents": 12,
+  "sections": [
+    "Home",
+    "/case-study-1",
+    "/case-study-2"
+  ],
+  "issues": []
+}

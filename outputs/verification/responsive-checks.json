@@ -1,0 +1,44 @@
+[
+  {
+    "width": 320,
+    "route": "/",
+    "height": 3192,
+    "mainWidth": 320,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "route": "/case-study-1",
+    "height": 19702,
+    "mainWidth": 320,
+    "scrollWidth": 320
+  },
+  {
+    "width": 320,
+    "route": "/case-study-2",
+    "height": 9714,
+    "mainWidth": 320,
+    "scrollWidth": 320
+  },
+  {
+    "width": 768,
+    "route": "/",
+    "height": 3384,
+    "mainWidth": 768,
+    "scrollWidth": 768
+  },
+  {
+    "width": 768,
+    "route": "/case-study-1",
+    "height": 17530,
+    "mainWidth": 768,
+    "scrollWidth": 768
+  },
+  {
+    "width": 768,
+    "route": "/case-study-2",
+    "height": 8942,
+    "mainWidth": 768,
+    "scrollWidth": 768
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "audio-creation": {
+    "video": "/media/audio-creation.mp4",
+    "poster": "/media/audio-creation.png"
+  },
+  "shared-interests": {
+    "video": "/media/shared-interests.mp4",
+    "poster": "/media/shared-interests.png"
+  },
+  "daily-activity": {
+    "video": "/media/daily-activity.mp4",
+    "poster": "/media/daily-activity.png"
+  },
+  "zuzu-game": {
+    "video": "/media/zuzu-game.mp4",
+    "poster": "/media/zuzu-game.png"
+  },
+  "zuzu-intro": {
+    "video": "/media/zuzu-intro.mp4",
+    "poster": "/media/zuzu-intro.png"
+  },
+  "zuzu-feedback": {
+    "video": "/media/zuzu-feedback.mp4",
+    "poster": "/media/zuzu-feedback.png"
+  },
+  "zuzu-english": {
+    "video": "/media/zuzu-english.mp4",
+    "poster": "/media/zuzu-english.png"
+  },
+  "zuzu-polish": {
+    "video": "/media/zuzu-polish.mp4",
+    "poster": "/media/zuzu-polish.png"
+  },
+  "zuzu-world": {
+    "video": "/media/zuzu-world.mp4",
+    "poster": "/media/zuzu-world.png"
+  },
+  "zuzu-encyclopedia": {
+    "video": "/media/zuzu-encyclopedia.mp4",
+    "poster": "/media/zuzu-encyclopedia.png"
+  },
+  "zuzu-parents": {
+    "video": "/media/zuzu-parents.mp4",
+    "poster": "/media/zuzu-parents.png"
+  },
+  "zuzu-subscription": {
+    "video": "/media/zuzu-subscription.mp4",
+    "poster": "/media/zuzu-subscription.png"
+  }
+}

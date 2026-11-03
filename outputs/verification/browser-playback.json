@@ -1,0 +1,34 @@
+[
+  {
+    "duration": 5.016667,
+    "muted": true,
+    "paused": false,
+    "readyState": 4,
+    "slot": "audio-creation",
+    "time": 0.4212,
+    "videoHeight": 940,
+    "videoWidth": 1504
+  },
+  {
+    "controls": true,
+    "duration": 8.064,
+    "muted": false,
+    "paused": false,
+    "readyState": 4,
+    "slot": "zuzu-english",
+    "time": 6.50755,
+    "videoHeight": 800,
+    "videoWidth": 390
+  },
+  {
+    "controls": true,
+    "duration": 8.064,
+    "muted": false,
+    "paused": true,
+    "readyState": 4,
+    "slot": "zuzu-polish",
+    "time": 8.064,
+    "videoHeight": 800,
+    "videoWidth": 390
+  }
+]

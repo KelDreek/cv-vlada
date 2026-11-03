@@ -1,0 +1,78 @@
+[
+  {
+    "screen": "home-desktop",
+    "comparedDirectNodes": 42,
+    "maxDifference": 0.000030517578125,
+    "differencesOverHalfPixel": [],
+    "scope": "Direct source data-node-id rectangles; component-instance IDs are not included. Text glyph rasterization is not measured."
+  },
+  {
+    "screen": "home-mobile",
+    "comparedDirectNodes": 18,
+    "maxDifference": 0,
+    "differencesOverHalfPixel": [],
+    "scope": "Direct source data-node-id rectangles; component-instance IDs are not included. Text glyph rasterization is not measured."
+  },
+  {
+    "screen": "case1-desktop",
+    "comparedDirectNodes": 112,
+    "maxDifference": 0,
+    "differencesOverHalfPixel": [],
+    "scope": "Direct source data-node-id rectangles; component-instance IDs are not included. Text glyph rasterization is not measured."
+  },
+  {
+    "screen": "case1-mobile",
+    "comparedDirectNodes": 112,
+    "maxDifference": 0,
+    "differencesOverHalfPixel": [],
+    "scope": "Direct source data-node-id rectangles; component-instance IDs are not included. Text glyph rasterization is not measured."
+  },
+  {
+    "screen": "case2-desktop",
+    "comparedDirectNodes": 74,
+    "maxDifference": 0.6640625,
+    "differencesOverHalfPixel": [
+      {
+        "id": "1:597",
+        "expected": {
+          "x": 432,
+          "y": 544,
+          "width": 86,
+          "height": 28
+        },
+        "actual": {
+          "x": 432,
+          "y": 544,
+          "width": 85.3359375,
+          "height": 28
+        },
+        "maxDifference": 0.6640625
+      }
+    ],
+    "scope": "Direct source data-node-id rectangles; component-instance IDs are not included. Text glyph rasterization is not measured."
+  },
+  {
+    "screen": "case2-mobile",
+    "comparedDirectNodes": 74,
+    "maxDifference": 0.6640625,
+    "differencesOverHalfPixel": [
+      {
+        "id": "1:692",
+        "expected": {
+          "x": 16,
+          "y": 900,
+          "width": 86,
+          "height": 28
+        },
+        "actual": {
+          "x": 16,
+          "y": 900,
+          "width": 85.3359375,
+          "height": 28
+        },
+        "maxDifference": 0.6640625
+      }
+    ],
+    "scope": "Direct source data-node-id rectangles; component-instance IDs are not included. Text glyph rasterization is not measured."
+  }
+]

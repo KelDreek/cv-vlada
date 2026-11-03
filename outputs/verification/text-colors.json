@@ -1,0 +1,74 @@
+{
+  "source": "design/portfolio.fig",
+  "primary": "#332e1c",
+  "secondary": "#838074",
+  "scope": "162 direct source text nodes across six compositions; instance IDs are not counted",
+  "screens": [
+    {
+      "screen": "home-desktop",
+      "compared": 15,
+      "mismatches": [],
+      "fontWeights": [
+        "700",
+        "300"
+      ],
+      "smoothing": "antialiased",
+      "height": 3384
+    },
+    {
+      "screen": "home-mobile",
+      "compared": 3,
+      "mismatches": [],
+      "fontWeights": [
+        "700",
+        "300"
+      ],
+      "smoothing": "antialiased",
+      "height": 3117.5
+    },
+    {
+      "screen": "case1-desktop",
+      "compared": 48,
+      "mismatches": [],
+      "fontWeights": [
+        "700",
+        "300"
+      ],
+      "smoothing": "antialiased",
+      "height": 20050
+    },
+    {
+      "screen": "case1-mobile",
+      "compared": 48,
+      "mismatches": [],
+      "fontWeights": [
+        "700",
+        "300"
+      ],
+      "smoothing": "antialiased",
+      "height": 18403.25
+    },
+    {
+      "screen": "case2-desktop",
+      "compared": 24,
+      "mismatches": [],
+      "fontWeights": [
+        "700",
+        "300"
+      ],
+      "smoothing": "antialiased",
+      "height": 10022
+    },
+    {
+      "screen": "case2-mobile",
+      "compared": 24,
+      "mismatches": [],
+      "fontWeights": [
+        "700",
+        "300"
+      ],
+      "smoothing": "antialiased",
+      "height": 9264.25
+    }
+  ]
+}

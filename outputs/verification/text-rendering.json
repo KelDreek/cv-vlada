@@ -1,0 +1,25 @@
+{
+  "region": {
+    "x": 320,
+    "y": 205,
+    "width": 640,
+    "height": 350
+  },
+  "reference": "work/reference/home.png",
+  "comparison": [
+    {
+      "capture": "text-before",
+      "meanAbsoluteChannelDifference": 6.157077380952381,
+      "pixelsBelowRed150": 25056,
+      "exactTextColorPixels": 0
+    },
+    {
+      "capture": "text-after",
+      "meanAbsoluteChannelDifference": 4.794811011904762,
+      "pixelsBelowRed150": 21643,
+      "exactTextColorPixels": 0
+    }
+  ],
+  "scope": "Fixed desktop home heading and bio crop; not all-screen pixel certification",
+  "limitations": "Browser screenshots are JPEG 4:2:0; the Figma reference is PNG. Comparison supports relative density improvement only; compressed pixel samples cannot verify exact CSS color."
+}

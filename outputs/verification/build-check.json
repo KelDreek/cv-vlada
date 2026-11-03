@@ -1,0 +1,8 @@
+{
+  "typescript": "passed",
+  "productionBuild": "passed",
+  "localAssets": "24 source files and two fonts passed",
+  "originalSourceIntegrity": "84 byte/hash comparisons passed",
+  "mediaManifest": "10/10 visible unique videos present",
+  "motionPreferenceScenarios": "passed"
+}

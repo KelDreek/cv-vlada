@@ -1,0 +1,186 @@
+[
+  {
+    "slot": "audio-creation",
+    "file": "public/media/audio-creation.mp4",
+    "bytes": 1336495,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1504,
+        "height": 940
+      }
+    ],
+    "duration": "5.016667"
+  },
+  {
+    "slot": "shared-interests",
+    "file": "public/media/shared-interests.mp4",
+    "bytes": 3710322,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1504,
+        "height": 940
+      }
+    ],
+    "duration": "6.016667"
+  },
+  {
+    "slot": "daily-activity",
+    "file": "public/media/daily-activity.mp4",
+    "bytes": 1348276,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1504,
+        "height": 940
+      }
+    ],
+    "duration": "6.016667"
+  },
+  {
+    "slot": "zuzu-game",
+    "file": "public/media/zuzu-game.mp4",
+    "bytes": 2475704,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "duration": "7.016667"
+  },
+  {
+    "slot": "zuzu-intro",
+    "file": "public/media/zuzu-intro.mp4",
+    "bytes": 4473867,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "duration": "8.064000"
+  },
+  {
+    "slot": "zuzu-feedback",
+    "file": "public/media/zuzu-feedback.mp4",
+    "bytes": 4460763,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "duration": "8.064000"
+  },
+  {
+    "slot": "zuzu-english",
+    "file": "public/media/zuzu-english.mp4",
+    "bytes": 2551474,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 800
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "duration": "8.064000"
+  },
+  {
+    "slot": "zuzu-polish",
+    "file": "public/media/zuzu-polish.mp4",
+    "bytes": 2539132,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 800
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio"
+      }
+    ],
+    "duration": "8.064000"
+  },
+  {
+    "slot": "zuzu-world",
+    "file": "public/media/zuzu-world.mp4",
+    "bytes": 4339146,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1504,
+        "height": 940
+      }
+    ],
+    "duration": "7.016667"
+  },
+  {
+    "slot": "zuzu-encyclopedia",
+    "file": "public/media/zuzu-encyclopedia.mp4",
+    "bytes": 1016034,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "duration": "2.033333"
+  },
+  {
+    "slot": "zuzu-parents",
+    "file": "public/media/zuzu-parents.mp4",
+    "bytes": 365006,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "duration": "4.016667"
+  },
+  {
+    "slot": "zuzu-subscription",
+    "file": "public/media/zuzu-subscription.mp4",
+    "bytes": 5989200,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "duration": "15.016667"
+  }
+]

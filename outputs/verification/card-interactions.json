@@ -1,0 +1,108 @@
+{
+  "ready": {
+    "coverOpacity": "0.8",
+    "hover": true,
+    "metadataColor": "rgb(131, 128, 116)",
+    "titleColor": "rgb(131, 128, 116)"
+  },
+  "progress": {
+    "coverWidth": 640,
+    "hasLink": false,
+    "hover": true,
+    "route": "/",
+    "statusOpacity": "1",
+    "statusWidth": 640
+  },
+  "hitArea": [
+    {
+      "insideLink": true,
+      "x": 1,
+      "y": 1
+    },
+    {
+      "insideLink": true,
+      "x": 639,
+      "y": 1
+    },
+    {
+      "insideLink": true,
+      "x": 320,
+      "y": 200
+    },
+    {
+      "insideLink": true,
+      "x": 1,
+      "y": 408
+    },
+    {
+      "insideLink": true,
+      "x": 639,
+      "y": 408
+    },
+    {
+      "insideLink": true,
+      "x": 20,
+      "y": 517
+    },
+    {
+      "insideLink": true,
+      "x": 639,
+      "y": 517
+    }
+  ],
+  "coverClick": {
+    "route": "/case-study-1",
+    "title": "Designing the Evolution of a Consumer App: From Social Audio to Wellness"
+  },
+  "titleClick": {
+    "route": "/case-study-2",
+    "title": "Zuzuzoo: Designing a playful learning experience for little explorers"
+  },
+  "titleHover": {
+    "coverOpacity": "0.8",
+    "hover": true
+  },
+  "progressTitleHover": {
+    "hover": true,
+    "statusOpacity": "1"
+  },
+  "mobile": {
+    "height": 3117.5,
+    "progressCards": [
+      {
+        "coverWidth": 367,
+        "focus": true,
+        "rect": {
+          "bottom": 2330.125,
+          "height": 379.375,
+          "left": 16,
+          "right": 383,
+          "top": 1950.75,
+          "width": 367,
+          "x": 16,
+          "y": 1950.75
+        },
+        "statusOpacity": "1",
+        "statusWidth": 367
+      },
+      {
+        "coverWidth": 367,
+        "focus": false,
+        "rect": {
+          "bottom": 2789.5,
+          "height": 379.375,
+          "left": 16,
+          "right": 383,
+          "top": 2410.125,
+          "width": 367,
+          "x": 16,
+          "y": 2410.125
+        },
+        "statusOpacity": "0",
+        "statusWidth": 367
+      }
+    ],
+    "scrollWidth": 399,
+    "width": 399
+  }
+}

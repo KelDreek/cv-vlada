@@ -1,0 +1,6 @@
+{
+  "automaticVideo": "pauses immediately when reduced motion changes, resumes only onscreen",
+  "languageVideo": "requires manual start and does not auto-resume",
+  "cleanup": "intersection observer and preference listener removed",
+  "result": "passed"
+}
