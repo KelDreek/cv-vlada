@@ -1,8 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
-import HomeDesktop from './pages/HomeDesktop';
-import HomeMobile from './pages/HomeMobile';
+import MatrixHome from './pages/MatrixHome';
 import CaseOneDesktop from './pages/CaseOneDesktop';
 import CaseOneMobile from './pages/CaseOneMobile';
 import CaseTwoDesktop from './pages/CaseTwoDesktop';
@@ -12,8 +11,8 @@ import './design.css';
 import { readRoute, routePath } from './paths';
 
 type Position = { y: number; focus?: string };
-const pages: Record<string, {title:string;desktop:typeof HomeDesktop;mobile:typeof HomeMobile}> = {
-  '/': {title:'Vladislav Fidrik — UX/UI Designer',desktop:HomeDesktop,mobile:HomeMobile},
+const pages: Record<string, {title:string;desktop:typeof MatrixHome;mobile:typeof MatrixHome}> = {
+  '/': {title:'Vladislav Fidrik — UX/UI & Product Designer',desktop:MatrixHome,mobile:MatrixHome},
   '/case-study-1': {title:'Consumer App: From Social Audio to Wellness — Vladislav Fidrik',desktop:CaseOneDesktop,mobile:CaseOneMobile},
   '/case-study-2': {title:'Zuzuzoo — Vladislav Fidrik',desktop:CaseTwoDesktop,mobile:CaseTwoMobile},
 };
