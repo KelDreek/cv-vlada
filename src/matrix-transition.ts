@@ -1,14 +1,16 @@
 type Point = { x: number; y: number };
-type Tile = Point & { start: number; lift: number };
+type Tile = Point & { start: number; driftX: number; driftY: number };
 
-const framesPerPhase = 15;
-const dissolveTime = 340;
-const assembleTime = 440;
+const framesPerPhase = 36;
+const dissolveTime = 1020;
+const assembleTime = 1320;
+const overlapTime = 135;
+const tileDissolve = .24;
 const tint = 'sepia(.55) hue-rotate(68deg) saturate(1.5)';
 
 function pixelFrames(width: number, height: number, origin: Point, incoming: boolean): Keyframe[] {
   const size = Math.max(22, Math.ceil(Math.max(width, height) / 35));
-  const distance = Math.hypot(width, height);
+  const radius = Math.hypot(Math.max(origin.x, width - origin.x), Math.max(origin.y, height - origin.y));
   const tiles: Tile[] = [];
 
   for (let y = 0; y < height; y += size) {
@@ -16,13 +18,19 @@ function pixelFrames(width: number, height: number, origin: Point, incoming: boo
       const column = x / size;
       const row = y / size;
       const noise = ((column * 137 + row * 173 + column * row * 89) % 97) / 97;
-      const fromOrigin = Math.hypot(x + size / 2 - origin.x, y + size / 2 - origin.y) / distance;
+      const dx = x + size / 2 - origin.x;
+      const dy = y + size / 2 - origin.y;
+      const edgeX = Math.max(x - origin.x, origin.x - x - size, 0);
+      const edgeY = Math.max(y - origin.y, origin.y - y - size, 0);
+      const fromOrigin = Math.hypot(edgeX, edgeY) / radius;
+      const drift = size * (.25 + noise * .55) / Math.max(size, Math.hypot(dx, dy));
 
       tiles.push({
         x,
         y,
-        start: fromOrigin * .55 + noise * .27,
-        lift: Math.round(size * (.25 + noise * .65)),
+        start: fromOrigin * (1 - tileDissolve),
+        driftX: dx * drift,
+        driftY: dy * drift,
       });
     }
   }
@@ -33,14 +41,14 @@ function pixelFrames(width: number, height: number, origin: Point, incoming: boo
     const fragments = [];
 
     for (const tile of tiles) {
-      const change = (progress - tile.start) / .19;
+      const change = (progress - tile.start) / tileDissolve;
       if (change >= 1) continue;
 
-      // Keep full tiles flush until the wave reaches them, then lift and shrink each fragment.
+      // Leave the page intact ahead of the wave, then shrink each tile as it drifts outward.
       const breaking = Math.max(0, change);
       const inset = Math.round(breaking * size * .39);
-      const left = tile.x + inset;
-      const top = tile.y + inset - Math.round(breaking * tile.lift);
+      const left = tile.x + inset + Math.round(breaking * tile.driftX);
+      const top = tile.y + inset + Math.round(breaking * tile.driftY);
       const extent = size - 2 * inset;
       fragments.push(`M${left} ${top}h${extent}v${extent}h-${extent}Z`);
     }
@@ -49,7 +57,7 @@ function pixelFrames(width: number, height: number, origin: Point, incoming: boo
       offset,
       easing: 'steps(1, end)',
       clipPath: `path("${fragments.join('') || 'M0 0Z'}")`,
-      filter: progress > .2 ? tint : 'none',
+      filter: incoming && progress > .2 ? tint : 'none',
     };
   });
 }
@@ -71,7 +79,7 @@ export async function matrixTransition(update: () => void, origin: Point) {
         pseudoElement: '::view-transition-old(root)',
       }));
       animations.push(root.animate(incoming, {
-        delay: dissolveTime - 45,
+        delay: dissolveTime - overlapTime,
         duration: assembleTime,
         fill: 'both',
         pseudoElement: '::view-transition-new(root)',
