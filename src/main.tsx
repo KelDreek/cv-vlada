@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import MatrixHome from './pages/MatrixHome';
+import { matrixTransition } from './matrix-transition';
 import CaseOneDesktop from './pages/CaseOneDesktop';
 import CaseOneMobile from './pages/CaseOneMobile';
 import CaseTwoDesktop from './pages/CaseTwoDesktop';
@@ -11,6 +12,7 @@ import './design.css';
 import { readRoute, routePath } from './paths';
 
 type Position = { y: number; focus?: string };
+type Origin = { x: number; y: number };
 const pages: Record<string, {title:string;desktop:typeof MatrixHome;mobile:typeof MatrixHome}> = {
   '/': {title:'Vladislav Fidrik — UX/UI & Product Designer',desktop:MatrixHome,mobile:MatrixHome},
   '/case-study-1': {title:'Consumer App: From Social Audio to Wellness — Vladislav Fidrik',desktop:CaseOneDesktop,mobile:CaseOneMobile},
@@ -28,9 +30,11 @@ function App(){
  useLayoutEffect(()=>{document.title=page?.title||'Page not found — Vladislav Fidrik';},[page]);
  useEffect(()=>{
   history.scrollRestoration='manual';let navigating=false;let currentPath=readRoute();
-  let pending: {destination:string;back:boolean;pop:boolean}|undefined;
-  const navigate=async(destination:string,back:boolean,pop=false)=>{
-   if(navigating){pending={destination,back,pop};return;}navigating=true;
+  let pending: {destination:string;back:boolean;pop:boolean;origin?:Origin}|undefined;
+  const navigate=async(destination:string,back:boolean,pop=false,origin?:Origin)=>{
+   if(navigating){pending={destination,back,pop,origin};return;}
+   if(!pop&&destination===currentPath)return;
+   navigating=true;
    const active=document.activeElement as HTMLElement|null;
    const positions=readPositions();positions[currentPath]={y:scrollY,focus:active?.closest('[data-node-id]')?.getAttribute('data-node-id')||undefined};
    sessionStorage.setItem('portfolio-positions',JSON.stringify(positions));
@@ -44,17 +48,23 @@ function App(){
    };
    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
    if(document.startViewTransition&&!reduced){
-    try{await document.startViewTransition(apply).finished;}catch{if(readRoute()!==destination)apply();}
+    try{
+     if(currentPath==='/'&&origin)await matrixTransition(apply,origin);
+     else await document.startViewTransition(apply).finished;
+    }catch{if(currentPath!==destination)apply();}
    }else if(reduced){apply();}
    else{const main=document.querySelector('main')!;await main.animate([{opacity:1},{opacity:0}],{duration:130,fill:'forwards'}).finished;apply();main.getAnimations().forEach(a=>a.cancel());await main.animate([{opacity:0,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:250,easing:'cubic-bezier(.22,1,.36,1)'}).finished;}
    navigating=false;
-   if(pending){const next=pending;pending=undefined;void navigate(next.destination,next.back,next.pop);}
+   if(pending){const next=pending;pending=undefined;void navigate(next.destination,next.back,next.pop,next.origin);}
   };
   const click=(e:MouseEvent)=>{
    const a=(e.target as Element).closest<HTMLAnchorElement>('a[href]');
    if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;
    const url=new URL(a.href),destination=readRoute(url.pathname);if(url.origin!==location.origin||url.hash||!pages[destination]||destination===readRoute())return;
-   e.preventDefault();void navigate(destination,a.hasAttribute('data-return-home'));
+   e.preventDefault();
+   const rect=a.getBoundingClientRect();
+   const origin=e.detail ? {x:e.clientX,y:e.clientY} : {x:rect.x+rect.width/2,y:rect.y+rect.height/2};
+   void navigate(destination,a.hasAttribute('data-return-home'),false,origin);
   };
   const pop=()=>{void navigate(readRoute(),true,true);};
   document.addEventListener('click',click);window.addEventListener('popstate',pop);

@@ -308,3 +308,23 @@
     min-height: 54px;
   }
 }
+
+:root[data-matrix-transition]::view-transition,
+:root[data-matrix-transition]::view-transition-image-pair(root) {
+  background: #030d07;
+}
+
+:root[data-matrix-transition]::view-transition-group(root),
+:root[data-matrix-transition]::view-transition-old(root),
+:root[data-matrix-transition]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+:root[data-matrix-transition]::view-transition-old(root) {
+  z-index: 1;
+}
+
+:root[data-matrix-transition]::view-transition-new(root) {
+  clip-path: inset(100%);
+}
